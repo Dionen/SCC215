@@ -12,9 +12,10 @@ typedef struct buffer {
 
 BUFFER *bbuffer();
 void cria_buffer();
-void muda_raiz_buffer(int RRN);
-PAGE *get_buffer(int RRN);
-void put_buffer(int RRN);
+void muda_raiz_buffer(int);
+
+PAGE *get_buffer(int);
+void put_buffer(int);
 
 void flush_buffer();
 void flush_buffer_node(NODE_F *d);

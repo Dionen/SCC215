@@ -40,7 +40,8 @@ void muda_raiz_buffer(int RRN){
 
 /**Retorna o endereco de uma pagina da arvore no buffer.
  * Alteracoes na pagina alterarao tambem o buffer!
- * Deve-se chamar put_buffer apos ou antes das alteracoes para marca-la como alterada. */
+ * Deve-se chamar put_buffer apos ou antes das alteracoes para marca-la como alterada. 
+ * No momento retorna nulo se o valor nao foi adicionado a mao no buffer pool (caso de teste 15)*/
 PAGE *get_buffer(int RRN){
 	PAGE *p;
 	
@@ -50,11 +51,12 @@ PAGE *get_buffer(int RRN){
 		p = busca_fila(b->BUFFER_POOL, RRN);
 
 		if (p == NULL){
-			// TO DO: FAZ ACESSO A DISCO E PEGA O RRN DO ARQUIVO DE INDICE
-			insert_fila(b->BUFFER_POOL, RRN, 10);	//somente para teste
+			// TO DO: FAZ ACESSO A DISCO E PEGAR O RRN DO ARQUIVO DE INDICE
+			insert_fila(b->BUFFER_POOL, RRN, 10);	//somente para teste. 
+													//O "10" impede que haja os "free(b->raiz) que estao comentados"
 			
 			PAGE_FAULT++;
-			return NULL; //para teste
+			return p;
 		} else {
 			PAGE_HIT++;
 			return p;
@@ -108,7 +110,7 @@ void flush_page(NODE_F *d){
 
 /** Remove todos os elementos do buffer da memoria principal */
 void destroy_buffer(){
-	//free(b->raiz);
+	//free(b->raiz); quando remover os testes, descomentar
 	destroy_fila(b->BUFFER_POOL);
 	free(b);
 }

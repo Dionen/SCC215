@@ -5,7 +5,7 @@
  * Profa. Dra. Cristina Dutra de Aguiar Ciferri
  * PAE Joao Pedro de Carvalho Castro
  * 
- * Primeira Parte do Trabalho Prático (Parte I)
+ * Primeira Parte do Trabalho Prático (Parte II)
  * 
  * 10295311 - Alexis de Almeida Coutinho
  * 9897988  - Guilherme Marchetto
@@ -59,7 +59,7 @@ int main(int argc, char* argv[]) {
 		BUFFER *b = bbuffer();
 		
 		get_buffer(8);
-		print_fila(b->BUFFER_POOL->inicio);
+		print_fila(b->BUFFER_POOL->inicio); // nojeira, mas pra teste funciona
 		get_buffer(2);
 		print_fila(b->BUFFER_POOL->inicio);
 		get_buffer(1);
