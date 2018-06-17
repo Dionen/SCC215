@@ -49,7 +49,7 @@ PAGE *busca_fila(FILA *f, int n_page){
 		}
 	}
 	
-	return p;
+	return NULL;
 }
 
 /** Busca um node e o retorna */

@@ -24,7 +24,7 @@ void cria_buffer(){
 void print_hit_fault(){
 	FILE *fp;
 	
-	fp = fopen("buffer-info.txt", "a");
+	fp = fopen(BUFFER_FNAME, "a");
 	if (fp == NULL) return;
 	
 	fprintf(fp, "Page fault: %d; Page hit: %d.\n", PAGE_FAULT, PAGE_HIT);
@@ -51,10 +51,10 @@ PAGE *get_buffer(int RRN){
 		p = busca_fila(b->BUFFER_POOL, RRN);
 
 		if (p == NULL){
-			// TO DO: FAZ ACESSO A DISCO E PEGAR O RRN DO ARQUIVO DE INDICE
+			/*// TO DO: FAZ ACESSO A DISCO E PEGAR O RRN DO ARQUIVO DE INDICE
 			insert_fila(b->BUFFER_POOL, RRN, 10);	//somente para teste. 
 													//O "10" impede que haja os "free(b->raiz) que estao comentados"
-			
+			*/
 			PAGE_FAULT++;
 			return p;
 		} else {

@@ -51,7 +51,7 @@ int main(int argc, char* argv[]) {
     case 9:
         imprime_pilha();
         break;
-    case 15:
+    /*case 15:
 		
 		// TESTE DO BUFFER
 		cria_buffer();
@@ -79,7 +79,7 @@ int main(int argc, char* argv[]) {
 		print_hit_fault();
 		
 		destroy_buffer(b);
-		break;
+		break;*/
     default:
         break;
     }
