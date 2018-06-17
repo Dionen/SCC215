@@ -18,6 +18,7 @@
 #include <functions.h>
 #include <utils.h>
 #include <buffer.h>
+#include <b_tree.h>
 
 /** A funcao main le a funcionalidade escolhida e chama uma funcao respectiva a mesma */
 int main(int argc, char* argv[]) {
@@ -51,6 +52,10 @@ int main(int argc, char* argv[]) {
     case 9:
         imprime_pilha();
         break;
+    case 10:
+		create_btree();
+		converte_indice(argv[2]);
+		break;
     /*case 15:
 		
 		// TESTE DO BUFFER
