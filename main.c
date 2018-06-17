@@ -17,6 +17,7 @@
 #include <string.h>
 #include <functions.h>
 #include <utils.h>
+#include <buffer.h>
 
 /** A funcao main le a funcionalidade escolhida e chama uma funcao respectiva a mesma */
 int main(int argc, char* argv[]) {
@@ -50,6 +51,35 @@ int main(int argc, char* argv[]) {
     case 9:
         imprime_pilha();
         break;
+    case 15:
+		
+		// TESTE DO BUFFER
+		cria_buffer();
+		
+		BUFFER *b = bbuffer();
+		
+		get_buffer(8);
+		print_fila(b->BUFFER_POOL->inicio);
+		get_buffer(2);
+		print_fila(b->BUFFER_POOL->inicio);
+		get_buffer(1);
+		print_fila(b->BUFFER_POOL->inicio);
+		put_buffer(2);
+		print_fila(b->BUFFER_POOL->inicio);
+		get_buffer(3);
+		print_fila(b->BUFFER_POOL->inicio);
+		put_buffer(1);
+		print_fila(b->BUFFER_POOL->inicio);
+		get_buffer(5);
+		print_fila(b->BUFFER_POOL->inicio);
+		get_buffer(9);
+		print_fila(b->BUFFER_POOL->inicio);
+		get_buffer(1);
+		print_fila(b->BUFFER_POOL->inicio);
+		print_hit_fault();
+		
+		destroy_buffer(b);
+		break;
     default:
         break;
     }

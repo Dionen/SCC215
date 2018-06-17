@@ -1,0 +1,3 @@
+Page fault: 6; Page hit: 3.
+Page fault: 6; Page hit: 3.
+Page fault: 6; Page hit: 3.
