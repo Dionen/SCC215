@@ -120,6 +120,8 @@ void split(FILE *b_tree, DATA key, int rrn, PAGE *old_page, DATA *promoted_key,
 			old_page->child[i] = -1;
 		}
 	}
+	old_page->child[MIN_KEY] = workch[MIN_KEY];		//nigga
+	old_page->child[9] = -1;	//porque o 'for' não chega até o final
 
 	for(int i = 0; i < MAX_KEYS+1; i++){
 	  if (i > MIN_KEY){
@@ -131,9 +133,7 @@ void split(FILE *b_tree, DATA key, int rrn, PAGE *old_page, DATA *promoted_key,
 			newpage->child[i] = -1;
 		}
 	}
-
-  old_page->child[MIN_KEY] = workch[MIN_KEY];
-  newpage->child[MIN_KEY] = workch[1+MIN_KEY];
+	newpage->child[10-5] = workch[10];		//como tem mais child do que value, o 'for' anterior não modifica o ultimo valor
 
   newpage->keyCounter = 5;
   old_page->keyCounter = 4;
