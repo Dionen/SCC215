@@ -203,6 +203,7 @@ int insert(FILE *b_tree, int CURRENT_RRN, DATA *KEY, int *PROMO_R_CHILD, DATA *P
 	}
 }
 
+//Comentário
 /** Le um arquivo .csv e o armazena em registros, em um novo arquivo .dat */
 void converte_indice(char *filename) {
     FILE *dados, *arq, *index;
