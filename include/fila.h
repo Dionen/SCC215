@@ -3,7 +3,7 @@
 
 #define BUFFER_LENGTH 4
 #define MAX_KEYS 9
-#define MIN_KEY MAX_KEYS/2
+#define MIN_KEY 4
 #define B_TREE_HEADER 9 //Bytes de header
 #define PAGE_SIZE 116
 
