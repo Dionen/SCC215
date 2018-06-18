@@ -282,8 +282,8 @@ void converte_indice(char *filename) {
             char zero = 0;
 
             int temp = atoi(registro.codINEP);
-            KEY.key = temp;
-            KEY.rrn = ftell(arq);
+            KEY.key = temp; //Correção RRN
+            KEY.rrn = (ftell(arq) - HEADER_SIZE) / REGISTER_SIZE;
 
             //====================== INDICE ========================
 
