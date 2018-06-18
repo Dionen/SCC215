@@ -66,17 +66,15 @@ int search(PAGE pg, int key, int counter, int altura){ //Retorna o RRN do arquiv
   }
 }
 
-/*int search2(int RRN, int KEY, int *FOUND_RRN, int *FOUND_POS){
+/*int search2(FILE *f, int RRN, int KEY, int *FOUND_RRN, int *FOUND_POS){
 	PAGE p;
 	int POS = 0;
 
 	if (RRN == -1){
 		return NOT_FOUND;
 	} else {
-		FILE *fname = fopen(B_TREE_FNAME, "rb");
-		fseek(fname, B_TREE_HEADER + PAGE_SIZE * RRN, SEEK_SET);
-		memcpy(&p, fname, PAGE_SIZE);
-		fclose(fname);
+		fseek(f, B_TREE_HEADER + PAGE_SIZE * RRN, SEEK_SET);
+		fread(&p, PAGE_SIZE, 1, f);
 
 		while (POS < p.keyCounter && KEY > p.value[POS].key) POS++;
 
@@ -85,7 +83,7 @@ int search(PAGE pg, int key, int counter, int altura){ //Retorna o RRN do arquiv
 			*FOUND_POS = POS;
 			return FOUND;
 		} else {
-			return search2(p.child[POS], KEY, FOUND_RRN, FOUND_POS);
+			return search2(f, p.child[POS], KEY, FOUND_RRN, FOUND_POS);
 		}
 	}
 }*/
