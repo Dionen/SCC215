@@ -10,11 +10,7 @@ Arquivo de teste de funções da árvore
 FALTA AJUSTAR BTREAD E BTWRITE, (REMOÇÃO NO ARQUIVO DE INDICES??)
 **/
 
-#define NOT_FOUND 0
-#define FOUND 1
-#define ERROR 2
-#define PROMOTION 3
-#define NO_PROMOTION 4
+
 
 
 void print_page(PAGE *p){
@@ -50,7 +46,7 @@ void create_btree(){
 
   fclose(b_tree);
 }
-
+/*
 int search(PAGE pg, int key, int counter, int altura){ //Retorna o RRN do arquivo de dados;
   if(counter > altura) return -1; //Passou da já verificou a árvore inteira
 
@@ -64,9 +60,9 @@ int search(PAGE pg, int key, int counter, int altura){ //Retorna o RRN do arquiv
     fclose(fname);
     return search(pg, key, counter++, altura);
   }
-}
+}*/
 
-/*int search2(FILE *f, int RRN, int KEY, int *FOUND_RRN, int *FOUND_POS){
+int search3(FILE *f, int RRN, int KEY, int *FOUND_RRN, int *FOUND_POS){
 	PAGE p;
 	int POS = 0;
 
@@ -83,10 +79,10 @@ int search(PAGE pg, int key, int counter, int altura){ //Retorna o RRN do arquiv
 			*FOUND_POS = POS;
 			return FOUND;
 		} else {
-			return search2(f, p.child[POS], KEY, FOUND_RRN, FOUND_POS);
+			return search3(f, p.child[POS], KEY, FOUND_RRN, FOUND_POS);
 		}
 	}
-}*/
+}
 
 void split(FILE *b_tree, DATA key, int rrn, PAGE *old_page, DATA *promoted_key,
                                                 int *promoted_rrn, PAGE *newpage){

@@ -23,6 +23,8 @@
 /** A funcao main le a funcionalidade escolhida e chama uma funcao respectiva a mesma */
 int main(int argc, char* argv[]) {
     int funcionalidade = atoi(argv[1]);
+    FILE *f;
+		int test1 = 0, test2 = 0, raiz;
 
     switch (funcionalidade) {
     case 1:
@@ -55,6 +57,20 @@ int main(int argc, char* argv[]) {
     case 10:
 		create_btree();
 		converte_indice(argv[2]);
+		break;
+	case 11:
+	
+		// TESTE FULEIRA
+		// PASSAR PRA b_tree.c depois!
+		f = fopen(B_TREE_FNAME, "rb");
+		fseek(f, 1, SEEK_SET);
+		fread(&raiz, 4, 1, f);
+		
+		if (search3(f, raiz, atoi(argv[2]), &test1, &test2) == FOUND){
+				printf("FOUND: %d %d\n", test1, test2);
+		} else {
+			printf("NOT FOUND\n");
+		}
 		break;
     /*case 15:
 		
