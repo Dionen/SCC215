@@ -16,16 +16,6 @@ FALTA AJUSTAR BTREAD E BTWRITE, (REMOÇÃO NO ARQUIVO DE INDICES??)
 #define PROMOTION 3
 #define NO_PROMOTION 4
 
-//char *disk_read(char *name, int pos, int tam){
-//   char *result;
-//   result = (char *) malloc(sizeof(char) * tam);
-//
-//   fname = fopen(name, "r");
-//   fseek(fname, pos, SEEK_SET);
-//
-//   memcpy(result, fname, tam);
-//   return result;
-// }
 
 void print_page(PAGE *p){
   printf("keyCounter: %d\nVALUES: ", p->keyCounter);
@@ -38,7 +28,7 @@ void print_page(PAGE *p){
 void init_page(PAGE *p){
 	p->keyCounter = 0;
   for (int i = 0; i < MAX_KEYS; i++) {
-	  p->value[i].key = -1; 
+	  p->value[i].key = -1;
 	  p->value[i].rrn = -1;
   }
   for (int i = 0; i < MAX_KEYS + 1; i++) p->child[i] = -1;
@@ -54,7 +44,7 @@ void create_btree(){
   fwrite(&status, 1, 1, b_tree);
   fwrite(&raiz, 4, 1, b_tree);
   fwrite(&altura, 4, 1, b_tree);
-  
+
   init_page(&p);
   fwrite(&p, sizeof(PAGE), 1, b_tree);
 
@@ -79,7 +69,7 @@ int search(PAGE pg, int key, int counter, int altura){ //Retorna o RRN do arquiv
 /*int search2(int RRN, int KEY, int *FOUND_RRN, int *FOUND_POS){
 	PAGE p;
 	int POS = 0;
-	
+
 	if (RRN == -1){
 		return NOT_FOUND;
 	} else {
@@ -87,9 +77,9 @@ int search(PAGE pg, int key, int counter, int altura){ //Retorna o RRN do arquiv
 		fseek(fname, B_TREE_HEADER + PAGE_SIZE * RRN, SEEK_SET);
 		memcpy(&p, fname, PAGE_SIZE);
 		fclose(fname);
-		
+
 		while (POS < p.keyCounter && KEY > p.value[POS].key) POS++;
-		
+
 		if (KEY == p.value[POS].key){
 			*FOUND_RRN = RRN;
 			*FOUND_POS = POS;
@@ -117,6 +107,7 @@ void split(FILE *b_tree, DATA key, int rrn, PAGE *old_page, DATA *promoted_key,
     workch[i+1] = workch[i];
   }
   workkey[i] = key;
+  workch[i+1] = rrn; //NÃO ESTAVA FALTANDO ESSA LINHA??
 
   *promoted_key = workkey[MIN_KEY];
   *promoted_rrn = (fileLen(b_tree) - B_TREE_HEADER)/PAGE_SIZE;
@@ -131,7 +122,7 @@ void split(FILE *b_tree, DATA key, int rrn, PAGE *old_page, DATA *promoted_key,
 			old_page->child[i] = -1;
 		}
 	}
-	
+
 	for(int i = 0; i < MAX_KEYS+1; i++){
 	  if (i > MIN_KEY){
 		  newpage->value[i-5] = workkey[i];
@@ -142,10 +133,10 @@ void split(FILE *b_tree, DATA key, int rrn, PAGE *old_page, DATA *promoted_key,
 			newpage->child[i] = -1;
 		}
 	}
-    
+
   old_page->child[MIN_KEY] = workch[MIN_KEY];
   newpage->child[MIN_KEY] = workch[1+MIN_KEY];
-  
+
   newpage->keyCounter = 5;
   old_page->keyCounter = 4;
 }
@@ -156,34 +147,42 @@ int insert(FILE *b_tree, int CURRENT_RRN, DATA *KEY, int *PROMO_R_CHILD, DATA *P
 	int POS, P_B_RRN;
 	DATA P_B_KEY;
 
-	if(CURRENT_RRN <= -1){
+	if(CURRENT_RRN <= -1){ //Chegou no fim da árvore
 		PROMO_KEY->key = KEY->key;
 		PROMO_KEY->rrn = KEY->rrn;
 		*PROMO_R_CHILD = -1;
 		return PROMOTION;
-	} else {
+	} else { // Não é o fim da árvore, então lê o nó e encontra a posição correta
 		fseek(b_tree, B_TREE_HEADER + PAGE_SIZE * CURRENT_RRN, SEEK_SET);
 		fread(&page, sizeof(PAGE), 1, b_tree);
 		for(POS = 0; POS < page.keyCounter && KEY->key > page.value[POS].key; POS++);
 	}
-	
+
 	if (KEY->key == page.value[POS].key){
 		printf("ERRO: Inserção de chave duplicada.\n");
 		return ERROR;
 	}
-
+  //Insere a key na posição (filho) correta
 	RETURN_VALUE = insert(b_tree, page.child[POS], KEY, &P_B_RRN, &P_B_KEY);
-	
+  //Inseriu e não teve promoção de chave
 	if (RETURN_VALUE == ERROR || RETURN_VALUE == NO_PROMOTION){
 		return RETURN_VALUE;
-		
-	} else if (page.keyCounter < MAX_KEYS) {
-		
+
+	} else if (page.keyCounter < MAX_KEYS) { //Ocorreu uma promoção de chave;
+    for(i = page.keyCounter; i > 0 && P_B_KEY.key < page.value[i-1].key; i--){
+      page.value[i].key = page.value[i-1].key;  //Ordenando as chaves
+      page.value[i].rrn = page.value[i-1].rrn;
+      page.child[i+1] = page.child[i];
+    }
+    page.value[i].key = P_B_KEY.key;
+    page.value[i].rrn = P_B_KEY.rrn;
+    page.child[i+1] = P_B_RRN;
+
 		// PRECISA SER INSERIDO ORDENADO AQUI ====================================
-		page.value[page.keyCounter] = P_B_KEY; // NO MOMENTO INSERE NO PRIMEIRO LIVRE
-		page.child[page.keyCounter+1] = P_B_RRN;
+		// page.value[page.keyCounter] = P_B_KEY; // NO MOMENTO INSERE NO PRIMEIRO LIVRE
+		// page.child[page.keyCounter+1] = P_B_RRN;
 		// =======================================================================
-		
+
 		page.keyCounter++;
 		fseek(b_tree, B_TREE_HEADER + PAGE_SIZE * CURRENT_RRN, SEEK_SET);
 		fwrite(&page, PAGE_SIZE, 1, b_tree);
@@ -192,12 +191,12 @@ int insert(FILE *b_tree, int CURRENT_RRN, DATA *KEY, int *PROMO_R_CHILD, DATA *P
 	} else {
 		init_page(&newpage);
 		split(b_tree, P_B_KEY, P_B_RRN, &page, PROMO_KEY, PROMO_R_CHILD, &newpage);
-		
+
 		fseek(b_tree, B_TREE_HEADER + sizeof(PAGE)*CURRENT_RRN, SEEK_SET);
 		fwrite(&page, sizeof(PAGE), 1, b_tree);
 		fseek(b_tree, B_TREE_HEADER + sizeof(PAGE)*(*PROMO_R_CHILD), SEEK_SET);
 		fwrite(&newpage, sizeof(PAGE), 1, b_tree);
-		
+
 		printf("NOVO FILHO DA ESQUEDA, RRN %d:\n", CURRENT_RRN);
 		print_page(&page);
 		printf("NOVO FILHO DA DIREITA, RRN %d:\n", *PROMO_R_CHILD);
@@ -221,7 +220,7 @@ void converte_indice(char *filename) {
         printf("Falha no carregamento do arquivo.\n");
         return;
     }
-    
+
     dados = fopen(filename, "rb");
     if(dados == NULL) {
         printf("Falha no carregamento do arquivo.\n");
@@ -282,13 +281,13 @@ void converte_indice(char *filename) {
             counter = 0; 				// então zeramos o contador e escrevemos no arquivo o conteúdo.
             int size = 28; 				// Tamanho dos registros fixos
             char zero = 0;
-            
+
             int temp = atoi(registro.codINEP);
             KEY.key = temp;
             KEY.rrn = ftell(arq);
-            
+
             //====================== INDICE ========================
-            
+
             if (insert(index, ROOT, &KEY, &PROMO_R_CHILD, &PROMO_KEY) == PROMOTION){
 				init_page(&p);
 				p.keyCounter = 1;
@@ -306,7 +305,7 @@ void converte_indice(char *filename) {
             fwrite(&temp, sizeof(int), 1, arq);
             fwrite(registro.dataAtiv, 10, 1, arq);
             fwrite(registro.uf, 2, 1, arq);
-            
+
             size += registro.indicador2;
             fwrite(&registro.indicador2, sizeof(int), 1, arq);
             if(registro.indicador2 != 0) // Se o nome é NULL, não escrevemos nada
@@ -325,11 +324,11 @@ void converte_indice(char *filename) {
 
             // Chegou ao fim do arquivo
             if (ftell(dados) == dados_size) {
-				
+
 				fseek(index, 1, SEEK_SET);
 				fwrite(&ROOT, sizeof(int), 1, index);
 				fclose(index);
-				
+
 				// Arquivo estavel
                 header.status = 1;
                 rewind(arq);
