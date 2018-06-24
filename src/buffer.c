@@ -122,7 +122,6 @@ void put_buffer(FILE *b_tree, PAGE *p, int RRN){
 
 /** Escreve todas as paginas modificadas do buffer no arquivo de indices */
 void flush_buffer(FILE *b_tree){
-	printf_buffer();
 	fseek(b_tree, B_TREE_HEADER + (PAGE_SIZE*b->rrn_raiz), SEEK_SET);
 	fwrite(b->raiz, PAGE_SIZE, 1, b_tree);
 	flush_buffer_node(b_tree, b->BUFFER_POOL->inicio);

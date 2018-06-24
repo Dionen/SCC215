@@ -127,8 +127,8 @@ int insert(FILE *b_tree, int CURRENT_RRN, DATA *KEY, int *PROMO_R_CHILD, DATA *P
 	int POS, P_B_RRN;
 	DATA P_B_KEY;
 	
-	printf_buffer();
-	printf("CURRENT RRN: %d\n", CURRENT_RRN);
+	/*printf_buffer();
+	printf("CURRENT RRN: %d\n", CURRENT_RRN);*/
 
 	if(CURRENT_RRN <= -1){ 
 		// Chegou no fim da árvore
@@ -143,7 +143,6 @@ int insert(FILE *b_tree, int CURRENT_RRN, DATA *KEY, int *PROMO_R_CHILD, DATA *P
 	}
 
 	if (KEY->key == page->value[POS].key){
-		printf("ERRO: Inserção de chave duplicada.\n");
 		return ERROR;
 	}
 	
@@ -166,7 +165,7 @@ int insert(FILE *b_tree, int CURRENT_RRN, DATA *KEY, int *PROMO_R_CHILD, DATA *P
 
 		page->keyCounter++;
 		put_buffer(b_tree, page, CURRENT_RRN);
-		print_page(page);
+		//print_page(page);
 		
 		return NO_PROMOTION;
 	} else {
@@ -179,10 +178,10 @@ int insert(FILE *b_tree, int CURRENT_RRN, DATA *KEY, int *PROMO_R_CHILD, DATA *P
 		put_buffer(b_tree, page, CURRENT_RRN);
 		put_buffer(b_tree, newpage, *PROMO_R_CHILD);
 		
-		printf("NOVO FILHO DA ESQUEDA, RRN %d:\n", CURRENT_RRN);
+		/*printf("NOVO FILHO DA ESQUEDA, RRN %d:\n", CURRENT_RRN);
 		print_page(page);
 		printf("NOVO FILHO DA DIREITA, RRN %d:\n", *PROMO_R_CHILD);
-		print_page(newpage);
+		print_page(newpage);*/
 		
 		return PROMOTION;
 	}
@@ -279,14 +278,14 @@ void converte_indice(char *filename) {
 				p->child[0] = ROOT;
 				p->child[1] = PROMO_R_CHILD;
 				ROOT = get_last_rrn(index)+1;			// Obtem o RRN da nova pagina
-				printf("NOVA RAIZ, RRN %d\n", ROOT);
-				print_page(p);
+				/*printf("NOVA RAIZ, RRN %d\n", ROOT);
+				print_page(p);*/
 				
 				muda_raiz_buffer(index, p, ROOT);		// Atualiza a raiz no buffer			
 				set_last_rrn(index, ROOT);				// Atualiza LAST_RRN
 				increase_height(index);				    // Incrementa a altura da arvore
 				
-				printf("RAIZ MODIFICADA.\n");
+				//printf("RAIZ MODIFICADA.\n");
             }
             //======================================================
 
@@ -313,6 +312,9 @@ void converte_indice(char *filename) {
             // Chegou ao fim do arquivo
             if (ftell(dados) == dados_size) {
 				// falta escrever o status
+				header.status = 1;
+				rewind(index);
+                fwrite(&header.status, sizeof(char), 1, index);
 				int altura = get_height(index);
 				int last_rrn = get_last_rrn(index);
 				
@@ -349,7 +351,7 @@ void insere_indice(char *argv2, char *argv3, char *argv4, char *argv5, char *arg
     char *prestadora_temp = argv7;
     char status = 0, espaco = 0;
     
-    int ROOT, PROMO_R_CHILD;
+    int saida, ROOT, PROMO_R_CHILD;
     DATA KEY, PROMO_KEY;
     PAGE *p;
 
@@ -363,9 +365,6 @@ void insere_indice(char *argv2, char *argv3, char *argv4, char *argv5, char *arg
     fp = fopen("output.dat", "r+b");
     index = fopen(B_TREE_FNAME, "r+b");
     
-    ROOT = get_root(index);
-    printf("%d root\n", ROOT);
-
     if(fp == NULL) {
         fprintf(stdout, "Falha no processamento do arquivo.\n");
 
@@ -393,7 +392,8 @@ void insere_indice(char *argv2, char *argv3, char *argv4, char *argv5, char *arg
 
         //====================== INDICE ========================
 
-        if (insert(index, ROOT, &KEY, &PROMO_R_CHILD, &PROMO_KEY) == PROMOTION){
+		saida = insert(index, ROOT, &KEY, &PROMO_R_CHILD, &PROMO_KEY);
+        if (saida == PROMOTION){
 			p = malloc(PAGE_SIZE);
 			init_page(p);
 			p->keyCounter = 1;
@@ -401,14 +401,14 @@ void insere_indice(char *argv2, char *argv3, char *argv4, char *argv5, char *arg
 			p->child[0] = ROOT;
 			p->child[1] = PROMO_R_CHILD;
 			ROOT = get_last_rrn(index)+1;			// Obtem o RRN da nova pagina
-			printf("NOVA RAIZ, RRN %d\n", ROOT);
-			print_page(p);
+			/*printf("NOVA RAIZ, RRN %d\n", ROOT);
+			print_page(p);*/
 				
 			muda_raiz_buffer(index, p, ROOT);		// Atualiza a raiz no buffer			
 			set_last_rrn(index, ROOT);				// Atualiza LAST_RRN
 			increase_height(index);				    // Incrementa a altura da arvore
 				
-			printf("RAIZ MODIFICADA.\n");
+			//printf("RAIZ MODIFICADA.\n");
         }
         //======================================================
         
@@ -443,7 +443,6 @@ void insere_indice(char *argv2, char *argv3, char *argv4, char *argv5, char *arg
 		fwrite(&status, 1, 1, fp);
         fclose(fp);
         
-        // falta escrever o status
 				int altura = get_height(index);
 				int last_rrn = get_last_rrn(index);
 				
@@ -453,6 +452,6 @@ void insere_indice(char *argv2, char *argv3, char *argv4, char *argv5, char *arg
 				
 				flush_buffer(index);						// Tudo que esta no buffer vai para o arquivo
         fclose(index);
-        fprintf(stdout, "Registro inserido com sucesso.\n");
+        if (saida != ERROR) fprintf(stdout, "Registro inserido com sucesso.\n");
     }
 }
