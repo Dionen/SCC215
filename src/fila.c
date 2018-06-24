@@ -19,6 +19,7 @@ boolean vazia_fila(FILA *f){
 	else return FALSE;
 }
 
+
 /**Busca e retorna o endereco de uma pagina no buffer.
  * Se encontrar, tambem rearranja a fila (coloca a pagina em ultimo).
  * Retorna NULL se nao encontrar a pagina desejada. */
@@ -30,10 +31,12 @@ PAGE *busca_fila(FILA *f, int n_page){
 	while (p != NULL){
 		if (n_page == p->n_page){
 			if (anterior != NULL){
-				anterior->next = p->next;
-				f->fim->next = p;
-				f->fim = p;
-				p->next = NULL;
+				if (f->fim != p){
+					anterior->next = p->next;
+					f->fim->next = p;
+					f->fim = p;
+					p->next = NULL;
+				}
 			} else {
 				f->inicio = p->next;
 				f->fim->next = p;
@@ -65,8 +68,9 @@ NODE_F *busca_node_fila(FILA *f, int RRN){
 	return NULL;
 }
 
-/** Insere uma novo node na fila */
-boolean insert_fila(FILA *f, int n_page, PAGE *page){
+/** Insere uma novo node na fila 
+ *  A FLAG indica se o node deve ser marcado como *modificado* no buffer. */
+boolean insert_fila(FILE *b_tree, FILA *f, int n_page, PAGE *page, boolean FLAG){
 	NODE_F *p;
 	
 	p = malloc(sizeof(NODE_F));
@@ -75,7 +79,7 @@ boolean insert_fila(FILA *f, int n_page, PAGE *page){
 	p->n_page = n_page;
 	p->page = page;
 	p->next = NULL;
-	p->flag = FALSE;
+	p->flag = FLAG;
 
 	if (vazia_fila(f) == TRUE) {
 		f->inicio = p;
@@ -86,12 +90,12 @@ boolean insert_fila(FILA *f, int n_page, PAGE *page){
 	}
 	
 	f->size++;
-	if (f->size > BUFFER_LENGTH) remove_fila(f);
+	if (f->size > BUFFER_LENGTH) remove_fila(b_tree, f);
 	return TRUE;
 }
 
 /** Remove o primeiro node da fila */
-boolean remove_fila(FILA *f){
+boolean remove_fila(FILE *b_tree, FILA *f){
 	NODE_F *p;
 		
 	if (vazia_fila(f) == TRUE) return FALSE;
@@ -102,17 +106,17 @@ boolean remove_fila(FILA *f){
 	if (f->inicio == NULL) f->fim == NULL;
 	
 	f->size--;
-	
-	flush_page(p);
-	//free(p->page); quando remover os testes, descomentar
+		
+	flush_page(b_tree, p);
+	free(p->page);
 	free(p);
 	return TRUE;
 }
 
 /** Funcoes de destruicao */
 void free_node_f(NODE_F *d){
-	if (d != NULL) free_node_f(d->next);
-	//free(d->page); quando remover os testes, descomentar
+	if (d->next != NULL) free_node_f(d->next);
+	free(d->page);
 	free(d);
 }
 
@@ -121,6 +125,7 @@ void destroy_fila(FILA *f){
 	free(f);
 }
 
+/** Imprime o buffer */
 void print_fila(NODE_F *d){
 	if (d != NULL){
 		printf("%d ", d->n_page);

@@ -1,23 +1,33 @@
 #include <stdio.h>
+#include <utils.h>
 #include <stdlib.h>
+#include <string.h>
 #include <fila.h>
 #include <buffer.h>
 
 BUFFER *b;
 int PAGE_HIT, PAGE_FAULT;
 
-/* FUNCAO SO PARA TESTE */
-BUFFER *bbuffer(){
-	return b;
+void printf_buffer(){
+	printf("BUFFER ==== raiz: %d buffer: ", b->rrn_raiz);
+	print_fila(b->BUFFER_POOL->inicio);
 }
 
 /** Aloca os elementos do buffer-pool na memoria principal */
 void cria_buffer(){
+	FILE *f = fopen(B_TREE_FNAME, "r+b");
 	b = malloc(sizeof(BUFFER));
-	b->rrn_raiz = 0;
-	b->raiz = NULL;
+	b->raiz = malloc(PAGE_SIZE);
+	
+	b->rrn_raiz = get_root(f);
+	fseek(f, B_TREE_HEADER + (PAGE_SIZE * b->rrn_raiz), SEEK_SET);
+	fread(b->raiz, PAGE_SIZE, 1, f);
+	
+	init_values(f); //UTILS
+	
 	b->BUFFER_POOL = cria_fila();
 	PAGE_HIT = PAGE_FAULT = 0;
+	fclose(f);
 }
 
 /** Atualiza o arquivo de saída do buffer-pool. */
@@ -32,86 +42,117 @@ void print_hit_fault(){
 }
 
 /** Muda a raiz no buffer */
-void muda_raiz_buffer(int RRN){
-	free(b->raiz); // Deve-se colocar a raiz antiga na fila do buffer? se sim tem que mudar essa aqui.
-	b->raiz = get_buffer(RRN);
+void muda_raiz_buffer(FILE *f, PAGE *p, int RRN){
+	// Insere a raiz antiga na fila do buffer
+	insert_fila(f, b->BUFFER_POOL, b->rrn_raiz, b->raiz, TRUE);
+	
+	// A nova toma o lugar da antiga.
+	b->raiz = p;
 	b->rrn_raiz = RRN; 
+	b->flag_raiz = TRUE;
 }
 
-/**Retorna o endereco de uma pagina da arvore no buffer.
- * Alteracoes na pagina alterarao tambem o buffer!
- * Deve-se chamar put_buffer apos ou antes das alteracoes para marca-la como alterada. 
- * No momento retorna nulo se o valor nao foi adicionado a mao no buffer pool (caso de teste 15)*/
-PAGE *get_buffer(int RRN){
-	PAGE *p;
-	
+/**Retorna o endereco de uma copia de uma pagina da arvore no buffer.
+ * Se a pagina nao estiver no buffer, a funcao busca a pagina no arquivo e
+ * a coloca no buffer. Se o buffer estiver cheio, remove o LRU. */
+PAGE *get_buffer(FILE *f, int RRN){
+	PAGE *result = NULL, *p;
+				
 	if (RRN == b->rrn_raiz){
-		return b->raiz;
+		// Caso a pagina requerida seja a raiz, ela ja esta no buffer.
+		result = malloc(PAGE_SIZE);
+		memcpy(result, b->raiz, PAGE_SIZE);
+		PAGE_HIT++;
+		
 	} else {
+		// Busca a pagina no buffer
 		p = busca_fila(b->BUFFER_POOL, RRN);
 
 		if (p == NULL){
-			/*// TO DO: FAZ ACESSO A DISCO E PEGAR O RRN DO ARQUIVO DE INDICE
-			insert_fila(b->BUFFER_POOL, RRN, 10);	//somente para teste. 
-													//O "10" impede que haja os "free(b->raiz) que estao comentados"
-			*/
+			// Se nao encontrar a pagina no buffer, busca no arquivo.
+			p = malloc(PAGE_SIZE);
+			
+			fseek(f, B_TREE_HEADER + (RRN*PAGE_SIZE), SEEK_SET);
+			fwrite(p, PAGE_SIZE, 1, f);
+			
+			// ^ ESSE WRITE QUE RETORNA 0000000000000000 QUANDO TENTA LER O RRN 10
+			//==========================================================================
+						
+			insert_fila(f, b->BUFFER_POOL, RRN, p, TRUE);  // A funcao de insercao remove o elemento LRU do buffer
+															// se o buffer estiver cheio.
+			result = malloc(PAGE_SIZE);
+			memcpy(result, p, PAGE_SIZE);
+			
 			PAGE_FAULT++;
-			return p;
 		} else {
+			// Encontrou a pagina no buffer.
+			result = malloc(PAGE_SIZE);
+			memcpy(result, p, PAGE_SIZE);
 			PAGE_HIT++;
-			return p;
 		}
 	}
+	
+	return result;
 }
 
-/** Marca uma pagina do buffer como alterada */
-void put_buffer(int RRN){
+/** Insere uma pagina no buffer. Se ela ja estiver no buffer, é
+ *  atualizada e marcada como alterada. */
+void put_buffer(FILE *b_tree, PAGE *p, int RRN){
 	NODE_F *d;
 	
 	if (RRN == b->rrn_raiz){
+		// Se a pagina alterada for a raiz, atualiza a raiz no buffer.
+		free(b->raiz);
+		b->raiz = p;
 		b->flag_raiz = TRUE;
 	} else {
+		// Procura se a pagina ja esta no buffer.
 		d = busca_node_fila(b->BUFFER_POOL, RRN);		
 		
 		if (d != NULL) {
+			// Caso a pagina ja estiver no buffer, a atualiza.
+			free(d->page);
+			d->page = p;
 			d->flag = TRUE;					 // Marca a pagina como modificada.
 			busca_fila(b->BUFFER_POOL, RRN); // Rearranja.
 			PAGE_HIT++;
+		} else {
+			// Caso a pagina nao esteja no buffer, a insere no buffer.
+			insert_fila(b_tree, b->BUFFER_POOL, RRN, p, TRUE);
 		}
 	}
 }
 
 /** Escreve todas as paginas modificadas do buffer no arquivo de indices */
-void flush_buffer(){
-	if (b->flag_raiz){
-		// TO DO: ATUALIZA A PAGINA NO ARQUIVO DE INDICE
-		b->flag_raiz = FALSE;
-	}
-	flush_buffer_node(b->BUFFER_POOL->inicio);
+void flush_buffer(FILE *b_tree){
+	fseek(b_tree, B_TREE_HEADER + (PAGE_SIZE*b->rrn_raiz), SEEK_SET);
+	fwrite(b->raiz, PAGE_SIZE, 1, b_tree);
+	flush_buffer_node(b_tree, b->BUFFER_POOL->inicio);
 }
 
-void flush_buffer_node(NODE_F *d){
+void flush_buffer_node(FILE *b_tree, NODE_F *d){
 	if (d != NULL){
-		if (d->flag){
-			// TO DO: ATUALIZA A PAGINA NO ARQUIVO DE INDICE
+		//if (d->flag){
+			fseek(b_tree, B_TREE_HEADER + (PAGE_SIZE*d->n_page), SEEK_SET);
+			fwrite(d->page, PAGE_SIZE, 1, b_tree);
 			d->flag = FALSE;
-		}
-		flush_buffer_node(d->next);
+		//}
+		flush_buffer_node(b_tree, d->next);
 	}
 }
 
 /** Escreve uma pagina modificada no arquivo de indices */
-void flush_page(NODE_F *d){
-	if (d != NULL && d->flag){
-		// TO DO: ATUALIZA A PAGINA NO ARQUIVO DE INDICE
-		d->flag = FALSE;
+void flush_page(FILE *b_tree, NODE_F *d){
+	if (d != NULL /*&& d->flag*/){
+		fseek(b_tree, B_TREE_HEADER + (PAGE_SIZE * d->n_page), SEEK_SET);
+		fwrite(d->page, PAGE_SIZE, 1, b_tree);
 	}
 }
 
 /** Remove todos os elementos do buffer da memoria principal */
 void destroy_buffer(){
-	//free(b->raiz); quando remover os testes, descomentar
-	destroy_fila(b->BUFFER_POOL);
+	if (b->raiz != NULL ) free(b->raiz);
+	if (b->BUFFER_POOL != NULL) destroy_fila(b->BUFFER_POOL);
 	free(b);
 }
 

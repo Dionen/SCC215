@@ -3,9 +3,15 @@
 
 #define BUFFER_LENGTH 4
 #define MAX_KEYS 9
-#define MIN_KEY 4
-#define B_TREE_HEADER 9 //Bytes de header
+#define MIN_KEY (MAX_KEYS/2)
+#define B_TREE_HEADER 13 //Bytes de header
 #define PAGE_SIZE 116
+
+#define STATUS_HEADER_POS 0
+#define ROOT_HEADER_POS 1
+#define HEIGHT_HEADER_POS 5
+#define RRN_HEADER_POS 9
+
 
 #define B_TREE_FNAME "b_tree.dat"
 #define BUFFER_FNAME "buffer-info.txt"
@@ -41,11 +47,13 @@ typedef struct {
 
 FILA *cria_fila();
 boolean vazia_fila(FILA *f);
-boolean remove_fila(FILA *f);
-boolean insert_fila(FILA *f, int n_page, PAGE *page);
+boolean remove_fila(FILE *b_tree, FILA *f);
+boolean insert_fila(FILE *b_tree, FILA *f, int n_page, PAGE *page, boolean FLAG);
 PAGE *busca_fila(FILA *f, int n_page);
 NODE_F *busca_node_fila(FILA *f, int RRN);
 void destroy_fila(FILA *f);
 void print_fila(NODE_F *d);
+
+void max_rrn(NODE_F *d, int *maior);
 
 #endif

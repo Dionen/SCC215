@@ -1,0 +1,1008 @@
+BUFFER ==== raiz: 0 buffer: 
+CURRENT RRN: 0
+tenta procurar no buffer
+BUFFER ==== raiz: 0 buffer: 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 1
+VALUES: 31031917/0 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 0 buffer: 
+CURRENT RRN: 0
+tenta procurar no buffer
+BUFFER ==== raiz: 0 buffer: 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 2
+VALUES: 31031917/0 31031984/1 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 0 buffer: 
+CURRENT RRN: 0
+tenta procurar no buffer
+BUFFER ==== raiz: 0 buffer: 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 3
+VALUES: 31031917/0 31031984/1 31032972/2 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 0 buffer: 
+CURRENT RRN: 0
+tenta procurar no buffer
+BUFFER ==== raiz: 0 buffer: 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 4
+VALUES: 31031917/0 31031984/1 31032972/2 31033626/3 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 0 buffer: 
+CURRENT RRN: 0
+tenta procurar no buffer
+BUFFER ==== raiz: 0 buffer: 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 5
+VALUES: 31031917/0 31031984/1 31032972/2 31033626/3 31033634/4 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 0 buffer: 
+CURRENT RRN: 0
+tenta procurar no buffer
+BUFFER ==== raiz: 0 buffer: 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 6
+VALUES: 31031917/0 31031984/1 31032972/2 31033626/3 31033634/4 31033642/5 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 0 buffer: 
+CURRENT RRN: 0
+tenta procurar no buffer
+BUFFER ==== raiz: 0 buffer: 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 7
+VALUES: 31031917/0 31031984/1 31032972/2 31033626/3 31033634/4 31033642/5 31033685/6 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 0 buffer: 
+CURRENT RRN: 0
+tenta procurar no buffer
+BUFFER ==== raiz: 0 buffer: 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 8
+VALUES: 31031917/0 31031984/1 31032972/2 31033626/3 31033634/4 31033642/5 31033685/6 31033693/7 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 0 buffer: 
+CURRENT RRN: 0
+tenta procurar no buffer
+BUFFER ==== raiz: 0 buffer: 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 9
+VALUES: 31031917/0 31031984/1 31032972/2 31033626/3 31033634/4 31033642/5 31033685/6 31033693/7 31033707/8 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 0 buffer: 
+CURRENT RRN: 0
+tenta procurar no buffer
+BUFFER ==== raiz: 0 buffer: 
+CURRENT RRN: -1
+0 0 0
+NOVO FILHO DA ESQUEDA, RRN 0:
+keyCounter: 4
+VALUES: 31031917/0 31031984/1 31032972/2 31033626/3 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+NOVO FILHO DA DIREITA, RRN 1:
+keyCounter: 5
+VALUES: 31033642/5 31033685/6 31033693/7 31033707/8 31034185/9 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+0 0 1
+NOVA RAIZ, RRN 2
+keyCounter: 1
+VALUES: 31033634/4 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: 0 1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+RAIZ MODIFICADA.
+BUFFER ==== raiz: 2 buffer: 1 0 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 1 0 
+CURRENT RRN: 1
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 6
+VALUES: 31033642/5 31033685/6 31033693/7 31033707/8 31034185/9 31034223/10 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 0 1 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 
+CURRENT RRN: 1
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 7
+VALUES: 31033642/5 31033685/6 31033693/7 31033707/8 31034185/9 31034223/10 31034240/11 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 0 1 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 
+CURRENT RRN: 1
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 8
+VALUES: 31033642/5 31033685/6 31033693/7 31033707/8 31034185/9 31034223/10 31034240/11 31034274/12 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 0 1 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 
+CURRENT RRN: 1
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 9
+VALUES: 31033642/5 31033685/6 31033693/7 31033707/8 31034185/9 31034223/10 31034240/11 31034274/12 31034509/13 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 0 1 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 
+CURRENT RRN: 1
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 
+CURRENT RRN: -1
+0 2 1
+NOVO FILHO DA ESQUEDA, RRN 1:
+keyCounter: 4
+VALUES: 31033642/5 31033685/6 31033693/7 31033707/8 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+NOVO FILHO DA DIREITA, RRN 3:
+keyCounter: 5
+VALUES: 31034223/10 31034240/11 31034274/12 31034509/13 31034533/14 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+PUT BUFFER
+keyCounter: 2
+VALUES: 31033634/4 31034185/9 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: 0 1 3 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 0 1 3 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 3 
+CURRENT RRN: 3
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 3 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 6
+VALUES: 31034223/10 31034240/11 31034274/12 31034509/13 31034533/14 31034541/15 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 0 1 3 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 3 
+CURRENT RRN: 3
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 3 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 7
+VALUES: 31034223/10 31034240/11 31034274/12 31034509/13 31034533/14 31034541/15 31034606/16 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 0 1 3 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 3 
+CURRENT RRN: 3
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 3 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 8
+VALUES: 31034223/10 31034240/11 31034274/12 31034509/13 31034533/14 31034541/15 31034606/16 31034614/17 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 0 1 3 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 3 
+CURRENT RRN: 3
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 3 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 9
+VALUES: 31034223/10 31034240/11 31034274/12 31034509/13 31034533/14 31034541/15 31034606/16 31034614/17 31034622/18 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 0 1 3 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 3 
+CURRENT RRN: 3
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 3 
+CURRENT RRN: -1
+0 2 3
+NOVO FILHO DA ESQUEDA, RRN 3:
+keyCounter: 4
+VALUES: 31034223/10 31034240/11 31034274/12 31034509/13 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+NOVO FILHO DA DIREITA, RRN 4:
+keyCounter: 5
+VALUES: 31034541/15 31034606/16 31034614/17 31034622/18 31034665/19 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+PUT BUFFER
+keyCounter: 3
+VALUES: 31033634/4 31034185/9 31034533/14 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: 0 1 3 4 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 0 1 3 4 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 3 4 
+CURRENT RRN: 4
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 3 4 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 6
+VALUES: 31034541/15 31034606/16 31034614/17 31034622/18 31034665/19 31034673/20 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 0 1 3 4 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 3 4 
+CURRENT RRN: 4
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 3 4 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 7
+VALUES: 31034541/15 31034606/16 31034614/17 31034622/18 31034665/19 31034673/20 31034843/21 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 0 1 3 4 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 3 4 
+CURRENT RRN: 4
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 3 4 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 8
+VALUES: 31034541/15 31034606/16 31034614/17 31034622/18 31034665/19 31034673/20 31034843/21 31034851/22 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 0 1 3 4 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 3 4 
+CURRENT RRN: 4
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 3 4 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 9
+VALUES: 31034541/15 31034606/16 31034614/17 31034622/18 31034665/19 31034673/20 31034843/21 31034851/22 31034860/23 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 0 1 3 4 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 3 4 
+CURRENT RRN: 4
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 0 1 3 4 
+CURRENT RRN: -1
+0 2 4
+NOVO FILHO DA ESQUEDA, RRN 4:
+keyCounter: 4
+VALUES: 31034541/15 31034606/16 31034614/17 31034622/18 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+NOVO FILHO DA DIREITA, RRN 5:
+keyCounter: 5
+VALUES: 31034673/20 31034843/21 31034851/22 31034860/23 31034878/24 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+PUT BUFFER
+keyCounter: 4
+VALUES: 31033634/4 31034185/9 31034533/14 31034665/19 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: 0 1 3 4 5 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 1 3 4 5 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 1 3 4 5 
+CURRENT RRN: 5
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 1 3 4 5 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 6
+VALUES: 31034673/20 31034843/21 31034851/22 31034860/23 31034878/24 31034886/25 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 1 3 4 5 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 1 3 4 5 
+CURRENT RRN: 5
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 1 3 4 5 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 7
+VALUES: 31034673/20 31034843/21 31034851/22 31034860/23 31034878/24 31034886/25 31034894/26 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 1 3 4 5 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 1 3 4 5 
+CURRENT RRN: 5
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 1 3 4 5 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 8
+VALUES: 31034673/20 31034843/21 31034851/22 31034860/23 31034878/24 31034886/25 31034894/26 31034908/27 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 1 3 4 5 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 1 3 4 5 
+CURRENT RRN: 5
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 1 3 4 5 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 9
+VALUES: 31034673/20 31034843/21 31034851/22 31034860/23 31034878/24 31034886/25 31034894/26 31034908/27 31034924/28 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 1 3 4 5 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 1 3 4 5 
+CURRENT RRN: 5
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 1 3 4 5 
+CURRENT RRN: -1
+0 2 5
+NOVO FILHO DA ESQUEDA, RRN 5:
+keyCounter: 4
+VALUES: 31034673/20 31034843/21 31034851/22 31034860/23 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+NOVO FILHO DA DIREITA, RRN 6:
+keyCounter: 5
+VALUES: 31034886/25 31034894/26 31034908/27 31034924/28 31034941/29 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+PUT BUFFER
+keyCounter: 5
+VALUES: 31033634/4 31034185/9 31034533/14 31034665/19 31034878/24 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: 0 1 3 4 5 6 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 3 4 5 6 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 3 4 5 6 
+CURRENT RRN: 6
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 3 4 5 6 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 6
+VALUES: 31034886/25 31034894/26 31034908/27 31034924/28 31034941/29 31034967/30 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 3 4 5 6 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 3 4 5 6 
+CURRENT RRN: 6
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 3 4 5 6 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 7
+VALUES: 31034886/25 31034894/26 31034908/27 31034924/28 31034941/29 31034967/30 31035009/31 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 3 4 5 6 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 3 4 5 6 
+CURRENT RRN: 6
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 3 4 5 6 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 8
+VALUES: 31034886/25 31034894/26 31034908/27 31034924/28 31034941/29 31034967/30 31035009/31 31035041/32 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 3 4 5 6 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 3 4 5 6 
+CURRENT RRN: 6
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 3 4 5 6 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 9
+VALUES: 31034886/25 31034894/26 31034908/27 31034924/28 31034941/29 31034967/30 31035009/31 31035041/32 31035050/33 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 3 4 5 6 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 3 4 5 6 
+CURRENT RRN: 6
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 3 4 5 6 
+CURRENT RRN: -1
+1 2 6
+NOVO FILHO DA ESQUEDA, RRN 6:
+keyCounter: 4
+VALUES: 31034886/25 31034894/26 31034908/27 31034924/28 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+NOVO FILHO DA DIREITA, RRN 7:
+keyCounter: 5
+VALUES: 31034967/30 31035009/31 31035041/32 31035050/33 31035068/34 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+PUT BUFFER
+keyCounter: 6
+VALUES: 31033634/4 31034185/9 31034533/14 31034665/19 31034878/24 31034941/29 -1/-1 -1/-1 -1/-1 
+CHILDS: 0 1 3 4 5 6 7 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 4 5 6 7 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 4 5 6 7 
+CURRENT RRN: 7
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 4 5 6 7 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 6
+VALUES: 31034967/30 31035009/31 31035041/32 31035050/33 31035068/34 31035076/35 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 4 5 6 7 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 4 5 6 7 
+CURRENT RRN: 7
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 4 5 6 7 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 7
+VALUES: 31034967/30 31035009/31 31035041/32 31035050/33 31035068/34 31035076/35 31035084/36 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 4 5 6 7 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 4 5 6 7 
+CURRENT RRN: 7
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 4 5 6 7 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 8
+VALUES: 31034967/30 31035009/31 31035041/32 31035050/33 31035068/34 31035076/35 31035084/36 31035114/37 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 4 5 6 7 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 4 5 6 7 
+CURRENT RRN: 7
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 4 5 6 7 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 9
+VALUES: 31034967/30 31035009/31 31035041/32 31035050/33 31035068/34 31035076/35 31035084/36 31035114/37 31035131/38 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 4 5 6 7 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 4 5 6 7 
+CURRENT RRN: 7
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 4 5 6 7 
+CURRENT RRN: -1
+3 2 7
+NOVO FILHO DA ESQUEDA, RRN 7:
+keyCounter: 4
+VALUES: 31034967/30 31035009/31 31035041/32 31035050/33 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+NOVO FILHO DA DIREITA, RRN 8:
+keyCounter: 5
+VALUES: 31035076/35 31035084/36 31035114/37 31035131/38 31035149/39 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+PUT BUFFER
+keyCounter: 7
+VALUES: 31033634/4 31034185/9 31034533/14 31034665/19 31034878/24 31034941/29 31035068/34 -1/-1 -1/-1 
+CHILDS: 0 1 3 4 5 6 7 8 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 5 6 7 8 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 5 6 7 8 
+CURRENT RRN: 8
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 5 6 7 8 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 6
+VALUES: 31035076/35 31035084/36 31035114/37 31035131/38 31035149/39 31035157/40 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 5 6 7 8 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 5 6 7 8 
+CURRENT RRN: 8
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 5 6 7 8 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 7
+VALUES: 31035076/35 31035084/36 31035114/37 31035131/38 31035149/39 31035157/40 31035173/41 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 5 6 7 8 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 5 6 7 8 
+CURRENT RRN: 8
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 5 6 7 8 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 8
+VALUES: 31035076/35 31035084/36 31035114/37 31035131/38 31035149/39 31035157/40 31035173/41 31035301/42 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 5 6 7 8 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 5 6 7 8 
+CURRENT RRN: 8
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 5 6 7 8 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 9
+VALUES: 31035076/35 31035084/36 31035114/37 31035131/38 31035149/39 31035157/40 31035173/41 31035301/42 31035327/43 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 5 6 7 8 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 5 6 7 8 
+CURRENT RRN: 8
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 5 6 7 8 
+CURRENT RRN: -1
+4 2 8
+NOVO FILHO DA ESQUEDA, RRN 8:
+keyCounter: 4
+VALUES: 31035076/35 31035084/36 31035114/37 31035131/38 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+NOVO FILHO DA DIREITA, RRN 9:
+keyCounter: 5
+VALUES: 31035157/40 31035173/41 31035301/42 31035327/43 31035343/44 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+PUT BUFFER
+keyCounter: 8
+VALUES: 31033634/4 31034185/9 31034533/14 31034665/19 31034878/24 31034941/29 31035068/34 31035149/39 -1/-1 
+CHILDS: 0 1 3 4 5 6 7 8 9 -1 
+
+BUFFER ==== raiz: 2 buffer: 6 7 8 9 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 6 7 8 9 
+CURRENT RRN: 9
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 6 7 8 9 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 6
+VALUES: 31035157/40 31035173/41 31035301/42 31035327/43 31035343/44 31035351/45 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 6 7 8 9 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 6 7 8 9 
+CURRENT RRN: 9
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 6 7 8 9 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 7
+VALUES: 31035157/40 31035173/41 31035301/42 31035327/43 31035343/44 31035351/45 31035408/46 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 6 7 8 9 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 6 7 8 9 
+CURRENT RRN: 9
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 6 7 8 9 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 8
+VALUES: 31035157/40 31035173/41 31035301/42 31035327/43 31035343/44 31035351/45 31035408/46 31035424/47 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 6 7 8 9 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 6 7 8 9 
+CURRENT RRN: 9
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 6 7 8 9 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 9
+VALUES: 31035157/40 31035173/41 31035301/42 31035327/43 31035343/44 31035351/45 31035408/46 31035424/47 31035441/48 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 6 7 8 9 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 6 7 8 9 
+CURRENT RRN: 9
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 6 7 8 9 
+CURRENT RRN: -1
+5 2 9
+NOVO FILHO DA ESQUEDA, RRN 9:
+keyCounter: 4
+VALUES: 31035157/40 31035173/41 31035301/42 31035327/43 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+NOVO FILHO DA DIREITA, RRN 10:
+keyCounter: 5
+VALUES: 31035351/45 31035408/46 31035424/47 31035441/48 31035459/49 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+PUT BUFFER
+keyCounter: 9
+VALUES: 31033634/4 31034185/9 31034533/14 31034665/19 31034878/24 31034941/29 31035068/34 31035149/39 31035343/44 
+CHILDS: 0 1 3 4 5 6 7 8 9 10 
+
+BUFFER ==== raiz: 2 buffer: 7 8 9 10 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 7 8 9 10 
+CURRENT RRN: 10
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 7 8 9 10 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 6
+VALUES: 31035351/45 31035408/46 31035424/47 31035441/48 31035459/49 31035491/50 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 7 8 9 10 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 7 8 9 10 
+CURRENT RRN: 10
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 7 8 9 10 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 7
+VALUES: 31035351/45 31035408/46 31035424/47 31035441/48 31035459/49 31035491/50 31035505/51 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 7 8 9 10 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 7 8 9 10 
+CURRENT RRN: 10
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 7 8 9 10 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 8
+VALUES: 31035351/45 31035408/46 31035424/47 31035441/48 31035459/49 31035491/50 31035505/51 31035653/52 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 7 8 9 10 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 7 8 9 10 
+CURRENT RRN: 10
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 7 8 9 10 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 9
+VALUES: 31035351/45 31035408/46 31035424/47 31035441/48 31035459/49 31035491/50 31035505/51 31035653/52 31035971/53 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 2 buffer: 7 8 9 10 
+CURRENT RRN: 2
+tenta procurar no buffer
+BUFFER ==== raiz: 2 buffer: 7 8 9 10 
+CURRENT RRN: 10
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 2 buffer: 7 8 9 10 
+CURRENT RRN: -1
+6 2 10
+NOVO FILHO DA ESQUEDA, RRN 10:
+keyCounter: 4
+VALUES: 31035351/45 31035408/46 31035424/47 31035441/48 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+NOVO FILHO DA DIREITA, RRN 11:
+keyCounter: 5
+VALUES: 31035491/50 31035505/51 31035653/52 31035971/53 31037818/54 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+7 2 11
+NOVO FILHO DA ESQUEDA, RRN 2:
+keyCounter: 4
+VALUES: 31033634/4 31034185/9 31034533/14 31034665/19 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: 0 1 3 4 5 -1 -1 -1 -1 -1 
+
+NOVO FILHO DA DIREITA, RRN 12:
+keyCounter: 5
+VALUES: 31034941/29 31035068/34 31035149/39 31035343/44 31035459/49 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: 6 7 8 9 10 11 -1 -1 -1 -1 
+
+8 2 12
+NOVA RAIZ, RRN 13
+keyCounter: 1
+VALUES: 31034878/24 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: 2 12 -1 -1 -1 -1 -1 -1 -1 -1 
+
+RAIZ MODIFICADA.
+BUFFER ==== raiz: 13 buffer: 10 11 12 2 
+CURRENT RRN: 13
+tenta procurar no buffer
+BUFFER ==== raiz: 13 buffer: 10 11 12 2 
+CURRENT RRN: 12
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 13 buffer: 10 11 2 12 
+CURRENT RRN: 11
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 13 buffer: 10 2 12 11 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 6
+VALUES: 31035491/50 31035505/51 31035653/52 31035971/53 31037818/54 31038687/55 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 13 buffer: 10 2 12 11 
+CURRENT RRN: 13
+tenta procurar no buffer
+BUFFER ==== raiz: 13 buffer: 10 2 12 11 
+CURRENT RRN: 12
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 13 buffer: 10 2 11 12 
+CURRENT RRN: 11
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 13 buffer: 10 2 12 11 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 7
+VALUES: 31035491/50 31035505/51 31035653/52 31035971/53 31037818/54 31038687/55 31039055/56 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 13 buffer: 10 2 12 11 
+CURRENT RRN: 13
+tenta procurar no buffer
+BUFFER ==== raiz: 13 buffer: 10 2 12 11 
+CURRENT RRN: 12
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 13 buffer: 10 2 11 12 
+CURRENT RRN: 11
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 13 buffer: 10 2 12 11 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 8
+VALUES: 31035491/50 31035505/51 31035653/52 31035971/53 31037818/54 31038687/55 31039055/56 31039071/57 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 13 buffer: 10 2 12 11 
+CURRENT RRN: 13
+tenta procurar no buffer
+BUFFER ==== raiz: 13 buffer: 10 2 12 11 
+CURRENT RRN: 12
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 13 buffer: 10 2 11 12 
+CURRENT RRN: 11
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 13 buffer: 10 2 12 11 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 9
+VALUES: 31035491/50 31035505/51 31035653/52 31035971/53 31037818/54 31038687/55 31039055/56 31039071/57 31039098/58 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 13 buffer: 10 2 12 11 
+CURRENT RRN: 13
+tenta procurar no buffer
+BUFFER ==== raiz: 13 buffer: 10 2 12 11 
+CURRENT RRN: 12
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 13 buffer: 10 2 11 12 
+CURRENT RRN: 11
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 13 buffer: 10 2 12 11 
+CURRENT RRN: -1
+9 13 12
+NOVO FILHO DA ESQUEDA, RRN 11:
+keyCounter: 4
+VALUES: 31035491/50 31035505/51 31035653/52 31035971/53 -1/-1 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+NOVO FILHO DA DIREITA, RRN 14:
+keyCounter: 5
+VALUES: 31038687/55 31039055/56 31039071/57 31039098/58 31040118/59 -1/-1 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+PUT BUFFER
+keyCounter: 6
+VALUES: 31034941/29 31035068/34 31035149/39 31035343/44 31035459/49 31037818/54 -1/-1 -1/-1 -1/-1 
+CHILDS: 6 7 8 9 10 11 14 -1 -1 -1 
+
+BUFFER ==== raiz: 13 buffer: 2 11 14 12 
+CURRENT RRN: 13
+tenta procurar no buffer
+BUFFER ==== raiz: 13 buffer: 2 11 14 12 
+CURRENT RRN: 12
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 13 buffer: 2 11 14 12 
+CURRENT RRN: 14
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 13 buffer: 2 11 12 14 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 6
+VALUES: 31038687/55 31039055/56 31039071/57 31039098/58 31040118/59 31109134/60 -1/-1 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 13 buffer: 2 11 12 14 
+CURRENT RRN: 13
+tenta procurar no buffer
+BUFFER ==== raiz: 13 buffer: 2 11 12 14 
+CURRENT RRN: 12
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 13 buffer: 2 11 14 12 
+CURRENT RRN: 14
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 13 buffer: 2 11 12 14 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 7
+VALUES: 31038687/55 31039055/56 31039071/57 31039098/58 31040118/59 31109134/60 31109142/61 -1/-1 -1/-1 
+CHILDS: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+BUFFER ==== raiz: 13 buffer: 2 11 12 14 
+CURRENT RRN: 13
+tenta procurar no buffer
+BUFFER ==== raiz: 13 buffer: 2 11 12 14 
+CURRENT RRN: 12
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 13 buffer: 2 11 14 12 
+CURRENT RRN: 14
+tenta procurar no buffer
+encontrou no buffer
+BUFFER ==== raiz: 13 buffer: 2 11 12 14 
+CURRENT RRN: -1
+PUT BUFFER
+keyCounter: 8
+VALUES: 31038687/55 31039055/56 31039071/57 31039098/58 31040118/59 

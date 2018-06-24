@@ -21,6 +21,8 @@
 #define HEADER_SIZE 5
 #define REGISTER_SIZE 87
 
+
+
 typedef struct registro {
     int INEP;
     char activ[activsz], FU[2], varfields[REGISTER_SIZE-4-activsz-2];
@@ -28,6 +30,14 @@ typedef struct registro {
 
 unsigned long fileLen(FILE *);
 void print_reg(REG *);
+
+int get_root(FILE *f);
+void set_root(FILE *f, int RRN);
+int get_last_rrn(FILE *f);
+int get_height();
+void init_values(FILE *f);
+void set_last_rrn(FILE *f, int);
+void increase_height(FILE *f);
 
 int cmp_INEP(REG *, void *);
 int cmp_activation(REG *, void *);

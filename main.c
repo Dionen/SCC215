@@ -54,7 +54,18 @@ int main(int argc, char* argv[]) {
         break;
     case 10:
 		create_btree();
+   		cria_buffer();
 		converte_indice(argv[2]);
+		print_hit_fault();
+		destroy_buffer();
+		break;
+	case 11:
+   		cria_buffer();
+        //insere_indice(argv[2], argv[3], argv[4], argv[5], argv[6], argv[7]);
+		print_hit_fault();
+		destroy_buffer();
+		break;
+	case 12:
 		break;
     /*case 15:
 		

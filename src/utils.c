@@ -17,6 +17,46 @@
 #include <string.h>
 #include "utils.h"
 
+static int LAST_RRN;
+static int HEIGHT;
+
+void init_values(FILE *f){
+	fseek(f, 5, SEEK_SET);
+	fread(&HEIGHT, sizeof(int), 1, f);
+	fread(&LAST_RRN, sizeof(int), 1, f);
+}
+
+int get_root(FILE *f){
+	int a;
+	fseek(f, 1, SEEK_SET);
+	fread(&a, sizeof(int), 1, f);
+	return a;
+}
+
+void set_root(FILE *f, int RRN){
+	fseek(f, 1, SEEK_SET);
+	fwrite(&RRN, sizeof(int), 1, f);
+}
+
+/** Retorna o valor do ultimo RRN adicionado ao arquivo de indices 
+ * TAO RECEBENDO FILE COMO ARGUMENTO PQ É SOBRA DE UMA VERSÃO ANTIGA E N TO AFIM DE MUDAR TUDO*/
+int get_last_rrn(FILE *f){
+	return LAST_RRN;
+}
+
+void set_last_rrn(FILE *f, int RRN){
+	LAST_RRN = RRN;
+}
+
+int get_height(){
+	return HEIGHT;
+}
+
+/** Aumenta o valor da altura no header do arquivo de indices */
+void increase_height(FILE *f){
+	HEIGHT++;
+}
+
 /** Retorna o tamanho de dado arquivo. */
 unsigned long fileLen(FILE *fp){
 	long size;
