@@ -23,7 +23,7 @@ void cria_buffer(){
 	fseek(f, B_TREE_HEADER + (PAGE_SIZE * b->rrn_raiz), SEEK_SET);
 	fread(b->raiz, PAGE_SIZE, 1, f);
 	
-	init_values(f); //UTILS
+	init_values(f);
 	
 	b->BUFFER_POOL = cria_fila();
 	PAGE_HIT = PAGE_FAULT = 0;
@@ -44,7 +44,7 @@ void print_hit_fault(){
 /** Muda a raiz no buffer */
 void muda_raiz_buffer(FILE *f, PAGE *p, int RRN){
 	// Insere a raiz antiga na fila do buffer
-	insert_fila(f, b->BUFFER_POOL, b->rrn_raiz, b->raiz, TRUE);
+	insert_fila(f, b->BUFFER_POOL, b->rrn_raiz, b->raiz, b->flag_raiz);
 	
 	// A nova toma o lugar da antiga.
 	b->raiz = p;
@@ -73,12 +73,9 @@ PAGE *get_buffer(FILE *f, int RRN){
 			p = malloc(PAGE_SIZE);
 			
 			fseek(f, B_TREE_HEADER + (RRN*PAGE_SIZE), SEEK_SET);
-			fwrite(p, PAGE_SIZE, 1, f);
-			
-			// ^ ESSE WRITE QUE RETORNA 0000000000000000 QUANDO TENTA LER O RRN 10
-			//==========================================================================
-						
-			insert_fila(f, b->BUFFER_POOL, RRN, p, TRUE);  // A funcao de insercao remove o elemento LRU do buffer
+			fread(p, PAGE_SIZE, 1, f);
+									
+			insert_fila(f, b->BUFFER_POOL, RRN, p, FALSE);  // A funcao de insercao remove o elemento LRU do buffer
 															// se o buffer estiver cheio.
 			result = malloc(PAGE_SIZE);
 			memcpy(result, p, PAGE_SIZE);
@@ -125,6 +122,7 @@ void put_buffer(FILE *b_tree, PAGE *p, int RRN){
 
 /** Escreve todas as paginas modificadas do buffer no arquivo de indices */
 void flush_buffer(FILE *b_tree){
+	printf_buffer();
 	fseek(b_tree, B_TREE_HEADER + (PAGE_SIZE*b->rrn_raiz), SEEK_SET);
 	fwrite(b->raiz, PAGE_SIZE, 1, b_tree);
 	flush_buffer_node(b_tree, b->BUFFER_POOL->inicio);
@@ -132,18 +130,18 @@ void flush_buffer(FILE *b_tree){
 
 void flush_buffer_node(FILE *b_tree, NODE_F *d){
 	if (d != NULL){
-		//if (d->flag){
+		if (d->flag){
 			fseek(b_tree, B_TREE_HEADER + (PAGE_SIZE*d->n_page), SEEK_SET);
 			fwrite(d->page, PAGE_SIZE, 1, b_tree);
 			d->flag = FALSE;
-		//}
+		}
 		flush_buffer_node(b_tree, d->next);
 	}
 }
 
 /** Escreve uma pagina modificada no arquivo de indices */
 void flush_page(FILE *b_tree, NODE_F *d){
-	if (d != NULL /*&& d->flag*/){
+	if (d != NULL && d->flag){
 		fseek(b_tree, B_TREE_HEADER + (PAGE_SIZE * d->n_page), SEEK_SET);
 		fwrite(d->page, PAGE_SIZE, 1, b_tree);
 	}

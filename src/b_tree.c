@@ -340,7 +340,7 @@ void converte_indice(char *filename) {
 }
 
 /** Insere um novo registro no arquivo de dados, com base no topo da pilha */
-/*void insere_indice(char *argv2, char *argv3, char *argv4, char *argv5, char *argv6, char *argv7) {
+void insere_indice(char *argv2, char *argv3, char *argv4, char *argv5, char *argv6, char *argv7) {
     FILE *fp, *index;
     int stack, stack_temp, size, fix_size = 28, codINEP_temp = atoi(argv2);
     char dataAtiv_temp[10], UF_temp[2];
@@ -400,16 +400,14 @@ void converte_indice(char *filename) {
 			p->value[0] = PROMO_KEY;
 			p->child[0] = ROOT;
 			p->child[1] = PROMO_R_CHILD;
-			ROOT = find_next_rrn(index);
+			ROOT = get_last_rrn(index)+1;			// Obtem o RRN da nova pagina
 			printf("NOVA RAIZ, RRN %d\n", ROOT);
 			print_page(p);
 				
-			muda_raiz_buffer(index, p, ROOT);
+			muda_raiz_buffer(index, p, ROOT);		// Atualiza a raiz no buffer			
+			set_last_rrn(index, ROOT);				// Atualiza LAST_RRN
+			increase_height(index);				    // Incrementa a altura da arvore
 				
-			set_root(index, ROOT);
-			increase_height(index);
-			set_last_rrn(index, ROOT);
-			
 			printf("RAIZ MODIFICADA.\n");
         }
         //======================================================
@@ -444,8 +442,17 @@ void converte_indice(char *filename) {
 		rewind(fp);
 		fwrite(&status, 1, 1, fp);
         fclose(fp);
+        
+        // falta escrever o status
+				int altura = get_height(index);
+				int last_rrn = get_last_rrn(index);
+				
+				set_root(index, ROOT);  					// Escreve a raiz no cabecalho
+				fwrite(&altura, sizeof(int), 1, index);		// Escreve a altura
+				fwrite(&last_rrn, sizeof(int), 1, index);	// e o LAST_RRN
+				
+				flush_buffer(index);						// Tudo que esta no buffer vai para o arquivo
         fclose(index);
         fprintf(stdout, "Registro inserido com sucesso.\n");
     }
 }
-*/

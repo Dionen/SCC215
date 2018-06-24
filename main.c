@@ -61,9 +61,9 @@ int main(int argc, char* argv[]) {
 		break;
 	case 11:
    		cria_buffer();
-        //insere_indice(argv[2], argv[3], argv[4], argv[5], argv[6], argv[7]);
+        insere_indice(argv[2], argv[3], argv[4], argv[5], argv[6], argv[7]);
 		print_hit_fault();
-		destroy_buffer();
+		//destroy_buffer();
 		break;
 	case 12:
 		break;

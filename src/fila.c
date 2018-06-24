@@ -30,18 +30,32 @@ PAGE *busca_fila(FILA *f, int n_page){
 	
 	while (p != NULL){
 		if (n_page == p->n_page){
-			if (anterior != NULL){
-				if (f->fim != p){
-					anterior->next = p->next;
-					f->fim->next = p;
+			// n_page é a qual eu quero
+			
+			
+			if (f->size == 2){
+				if (anterior == NULL){
+					p->next->next = p;
 					f->fim = p;
-					p->next = NULL;
+					f->inicio = p->next;
+					p->next = NULL;	
 				}
-			} else {
-				f->inicio = p->next;
-				f->fim->next = p;
-				f->fim = p;
-				p->next = NULL;
+			} else if (f->size > 2){
+				if (anterior != NULL){
+				// se nao for a primeira
+					if (f->fim != p){
+						// se nao for a ultima
+						anterior->next = p->next;
+						f->fim->next = p;
+						f->fim = p;
+						p->next = NULL;
+					}
+				} else {
+						f->inicio = p->next;
+						f->fim->next = p;
+						f->fim = p;
+						p->next = NULL;
+				}	
 			}
 			
 			return p->page;
