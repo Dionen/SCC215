@@ -1,10 +1,24 @@
+/* Universidade de Sao Paulo
+ * Instituto de Ciências Matemáticas e de Computação
+ * Departamento de Ciências de Computação - SCC0215 (Turma B)
+ * 
+ * Profa. Dra. Cristina Dutra de Aguiar Ciferri
+ * PAE Joao Pedro de Carvalho Castro
+ * 
+ * Primeira Parte do Trabalho Prático (Parte II)
+ * 
+ * 10295311 - Alexis de Almeida Coutinho
+ * 9897988  - Guilherme Marchetto
+ * 9283607  - João Vitor Guino Rieswick
+ * 9779392  - Wallace Cruz de Souza */
+
 #ifndef _FILA_H_
 #define _FILA_H_
 
 #define BUFFER_LENGTH 4
 #define MAX_KEYS 9
 #define MIN_KEY (MAX_KEYS/2)
-#define B_TREE_HEADER 13 //Bytes de header
+#define B_TREE_HEADER 13
 #define PAGE_SIZE 116
 
 #define STATUS_HEADER_POS 0

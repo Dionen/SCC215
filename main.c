@@ -53,6 +53,7 @@ int main(int argc, char* argv[]) {
         imprime_pilha();
         break;
     case 10:
+		/* Cria o arquivo de dados junto ao indice arvore-B */
 		create_btree();
    		cria_buffer();
 		converte_indice(argv[2]);
@@ -60,42 +61,19 @@ int main(int argc, char* argv[]) {
 		destroy_buffer();
 		break;
 	case 11:
+		/* Insere no arquivo de dados e no arquivo indice arvore-B */
    		cria_buffer();
         insere_indice(argv[2], argv[3], argv[4], argv[5], argv[6], argv[7]);
 		print_hit_fault();
-		//destroy_buffer();
+		destroy_buffer();
 		break;
 	case 12:
-		break;
-    /*case 15:
-		
-		// TESTE DO BUFFER
+		/* Busca pelo indice arvore-B e retorna um registro do arquivo de dados */
 		cria_buffer();
-		
-		BUFFER *b = bbuffer();
-		
-		get_buffer(8);
-		print_fila(b->BUFFER_POOL->inicio); // nojeira, mas pra teste funciona
-		get_buffer(2);
-		print_fila(b->BUFFER_POOL->inicio);
-		get_buffer(1);
-		print_fila(b->BUFFER_POOL->inicio);
-		put_buffer(2);
-		print_fila(b->BUFFER_POOL->inicio);
-		get_buffer(3);
-		print_fila(b->BUFFER_POOL->inicio);
-		put_buffer(1);
-		print_fila(b->BUFFER_POOL->inicio);
-		get_buffer(5);
-		print_fila(b->BUFFER_POOL->inicio);
-		get_buffer(9);
-		print_fila(b->BUFFER_POOL->inicio);
-		get_buffer(1);
-		print_fila(b->BUFFER_POOL->inicio);
+		search_indice(argv[2]);
 		print_hit_fault();
-		
-		destroy_buffer(b);
-		break;*/
+		destroy_buffer();
+		break;
     default:
         break;
     }

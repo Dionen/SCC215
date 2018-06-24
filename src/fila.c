@@ -1,3 +1,17 @@
+/* Universidade de Sao Paulo
+ * Instituto de Ciências Matemáticas e de Computação
+ * Departamento de Ciências de Computação - SCC0215 (Turma B)
+ * 
+ * Profa. Dra. Cristina Dutra de Aguiar Ciferri
+ * PAE Joao Pedro de Carvalho Castro
+ * 
+ * Primeira Parte do Trabalho Prático (Parte II)
+ * 
+ * 10295311 - Alexis de Almeida Coutinho
+ * 9897988  - Guilherme Marchetto
+ * 9283607  - João Vitor Guino Rieswick
+ * 9779392  - Wallace Cruz de Souza */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <fila.h>
@@ -29,10 +43,7 @@ PAGE *busca_fila(FILA *f, int n_page){
 	p = f->inicio;
 	
 	while (p != NULL){
-		if (n_page == p->n_page){
-			// n_page é a qual eu quero
-			
-			
+		if (n_page == p->n_page){			
 			if (f->size == 2){
 				if (anterior == NULL){
 					p->next->next = p;
@@ -42,9 +53,7 @@ PAGE *busca_fila(FILA *f, int n_page){
 				}
 			} else if (f->size > 2){
 				if (anterior != NULL){
-				// se nao for a primeira
 					if (f->fim != p){
-						// se nao for a ultima
 						anterior->next = p->next;
 						f->fim->next = p;
 						f->fim = p;

@@ -1,3 +1,17 @@
+/* Universidade de Sao Paulo
+ * Instituto de Ciências Matemáticas e de Computação
+ * Departamento de Ciências de Computação - SCC0215 (Turma B)
+ * 
+ * Profa. Dra. Cristina Dutra de Aguiar Ciferri
+ * PAE Joao Pedro de Carvalho Castro
+ * 
+ * Primeira Parte do Trabalho Prático (Parte II)
+ * 
+ * 10295311 - Alexis de Almeida Coutinho
+ * 9897988  - Guilherme Marchetto
+ * 9283607  - João Vitor Guino Rieswick
+ * 9779392  - Wallace Cruz de Souza */
+
 #include <stdio.h>
 #include <utils.h>
 #include <stdlib.h>
